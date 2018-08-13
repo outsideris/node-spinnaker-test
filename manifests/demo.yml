@@ -31,13 +31,13 @@ spec:
     spec:
       containers:
       - name: primary
-        image: index.docker.io/lwander/spin-kub-v2-demo
+        image: index.docker.io/outsideris/node-spinnaker-test
         ports:
-        - containerPort: 8000
+        - containerPort: 3000
         readinessProbe:
           httpGet:
             path: /
-            port: 8000
+            port: 3000
         envFrom:
         - configMapRef:
             name: spinnaker-demo-config
@@ -56,4 +56,4 @@ spec:
   ports:
   - protocol: TCP
     port: 80
-    targetPort: 8000
+    targetPort: 3000
